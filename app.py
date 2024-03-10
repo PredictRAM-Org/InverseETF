@@ -30,6 +30,10 @@ def main():
     stock_folder = "stockfolder"
     stock_data = load_data(stock_folder)
 
+    # Display available columns for selection
+    st.sidebar.header("Select Columns for Portfolio")
+    selected_columns = st.sidebar.multiselect("Select columns for your portfolio", stock_data.columns[1:])
+
     # Display available stocks
     st.sidebar.header("Select Stocks for Portfolio")
     selected_stocks = st.sidebar.multiselect("Select stocks for your portfolio", stock_data.columns[1:])
